@@ -1,0 +1,8 @@
+site_name: HFHubPHP
+site_description: A PHP library for interacting with the Hugging Face Hub.
+site_author: mrfakename
+copyright: '&copy; 2023 mrfakename. All rights reserved. This documentation is licensed under the Mozilla Public License, version 2.0.'
+theme: windmill
+markdown_extensions:
+  - mdx_truly_sane_lists
+  - admonition

@@ -30,55 +30,17 @@ We aim to support the following methods, with similar APIs as the original `hugg
     - [x] Delete
   - [ ] Later: Add LFS support
 
-## Documentation
-
-### Installation
-
-Just drag'n'drop the classes you need into your project folder! `hub.php` includes everything you need to interact with the HF Hub!
-
-### Usage
-
-More documentation coming soon!
-
-```php
-include 'hub.php';
-$api = new Hub('hf_***');
-```
-
-### Methods
-
-> NOTE: Starting with PHP 8, you can now use named arguments! This means you can call `$api->create_repo` as `$api->create_repo('username/model', private: True)`!
-
-```php
-# API
-$api = new Hub($token)
-# Repo operations
-$api->create_repo($repo_id, $repo_type = 'model', $private = False, $space_sdk = null, $space_hardware = null, $space_storage = null, $space_sleep_time = null, $space_secrets = null, $space_variables = null)
-$api->delete_repo($repo_id, $repo_type = 'model')
-$api->move_repo($from_id, $to_id, $repo_type = 'model')
-# File operations
-$api->upload_string($repo_id, $path, $string, $commit_message, $commit_description = null, $revision = 'main', $repo_type = 'model')
-$api->upload_file($repo_id, $path, $file, $commit_message, $commit_description = null, $revision = 'main', $repo_type = 'model')
-$api->delete_file($repo_id, $path, $commit_message = "Delete File", $commit_description = null, $revision = 'main', $repo_type = 'model')
-$api->delete_folder($repo_id, $path, $commit_message = "Delete Folder", $commit_description = null, $revision = 'main', $repo_type = 'model')
-$api->download_file($repo_id, $file, $path, $repo_type = 'model', $revision = 'main')
-# List operations
-$api->list_files($repo_id, $repo_path = '', $repo_type = 'model', $revision = 'main')
-# Update operations
-$api->update_repo_visibility($repo_id, $private, $repo_type = 'model')
-# User operations
-$api->whoami()
-# Inference APIs
-$api->generate($model_id, $inputs, $min_length = 0, $max_length = 256, $top_k	= null, $top_p = null, $temperature = 1.0, $repetition_penalty = null, $max_time = 120, $do_sample = null, $use_cache = false, $wait_for_model = true)
-```
-
 ## Porting
 
 This library is designed to be easy to port! Please open an Issue if you're interested in porting this library. If this library is ported to enough languages, it might be good to create a centralized GitHub organization.
 
+## Important
+
+This project is not affiliated with or endorsed by Hugging Face, Inc. in any way whatsoever.
+
 ## Credits/Acknowledgements
 
-The entire library is basically a reimplementation of the [`huggingface_hub` library](https://github.com/huggingface/huggingface_hub) in PHP, with modifications to make it more portable. The API implementation is almost completely based on that library.
+The entire library is basically a reimplementation of the [`huggingface_hub` library](https://github.com/huggingface/huggingface_hub) in PHP, in a single file. The API implementation is almost completely based on that library.
 
 ## License
 

@@ -172,7 +172,7 @@ class Hub
         return json_decode($response, true);
     }
 
-    public function upload_string($repo_id, $path, $string, $commit_message, $commit_description = null, $revision = 'main', $repo_type = 'model')
+    public function upload_string($repo_id, $path, $string, $commit_message, $commit_description = null, $repo_type = 'model', $revision = 'main')
     {
         $this->_validate_type($repo_type);
         $payload = [
@@ -206,7 +206,7 @@ class Hub
         curl_close($ch);
         return json_decode($response, true);
     }
-    public function delete_file($repo_id, $path, $commit_message = "Delete File", $commit_description = null, $revision = 'main', $repo_type = 'model')
+    public function delete_file($repo_id, $path, $repo_type = 'model', $commit_message = "Delete File", $commit_description = null, $revision = 'main')
     {
         $this->_validate_type($repo_type);
         $payload = [
@@ -238,7 +238,7 @@ class Hub
         curl_close($ch);
         return json_decode($response, true);
     }
-    public function delete_folder($repo_id, $path, $commit_message = "Delete Folder", $commit_description = null, $revision = 'main', $repo_type = 'model')
+    public function delete_folder($repo_id, $path, $repo_type = 'model', $commit_message = "Delete Folder", $commit_description = null, $revision = 'main')
     {
         $this->_validate_type($repo_type);
         $payload = [
@@ -270,9 +270,9 @@ class Hub
         curl_close($ch);
         return json_decode($response, true);
     }
-    public function upload_file($repo_id, $path, $file, $commit_message, $commit_description = null, $revision = 'main', $repo_type = 'model')
+    public function upload_file($repo_id, $path, $file, $commit_message, $commit_description = null, $repo_type = 'model', $revision = 'main')
     {
-        return $this->upload_string($repo_id, $path, file_get_contents($file), $commit_message, $commit_description, $revision, $repo_type);
+        return $this->upload_string($repo_id, $repo_type, $path, file_get_contents($file), $commit_message, $commit_description, $revision);
     }
     # User Functions
     public function whoami()
@@ -305,7 +305,7 @@ class Hub
     {
         $this->_validate_type($repo_type);
         $revision = rawurlencode($revision);
-        $url = $this->base_url . "api/$repo_type" . "s/" . $repo_id . "/tree/$revision/" . rawurlencode($repo_path);
+        $url = $this->base_url . "api/$repo_type" . "s/" . $repo_id . "/tree/$revision/" . rawurlencode(trim($repo_path, '/'));
         list($res, $headers) = $this->_cgc_headers($url);
         $currentRes = $res;
         $result = json_decode($res, true);

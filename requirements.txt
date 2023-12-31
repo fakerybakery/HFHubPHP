@@ -1,0 +1,4 @@
+# Requirements for documentation
+
+mdx_truly_sane_lists
+mkdocs-windmill
