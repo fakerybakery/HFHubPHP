@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="mrfakename">
+    
+    <link rel="shortcut icon" href="../../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Delete File - HFHubPHP</title>
+    <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Delete File", url: "#_top", children: [
+              {title: "Method", url: "#method" },
+              {title: "Parameters", url: "#parameters" },
+              {title: "Example", url: "#example" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../list-files/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../list-files/" class="btn btn-xs btn-link">
+        List Files
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../delete-folder/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../delete-folder/" class="btn btn-xs btn-link">
+        Delete File
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="delete-file">Delete File</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method directly streams the incoming data into the file. For large files, the data will be incrementally downloaded and saved. This means that the output file is not complete until the task finishes.</p>
+</div>
+<h2 id="method">Method</h2>
+<pre><code class="language-php">$api-&gt;download_file
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<ul>
+<li><strong>repo_id</strong>: The ID of the repository on the Hugging Face Hub. Usually in the form of username/repository_name.</li>
+<li><strong>file</strong>: Path in repo to download</li>
+<li><strong>path</strong>: Path in save the downloaded file to</li>
+<li><strong>repo_type</strong>: The repo type. Defaults to model. Can be:<ul>
+<li>model</li>
+<li>dataset</li>
+<li>space</li>
+</ul>
+</li>
+<li><strong>revision</strong>: The branch to use. Defaults to <code>main</code>.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Download <code>test.txt</code> from the model <code>username/repo</code> and save it to <code>output.txt</code>.</p>
+<pre><code class="language-php">&lt;?php
+include 'hub.php';
+$api = new Hub('hf_***');
+$api-&gt;download_file('username/repo', 'test.txt', 'output.txt', 'model');
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../list-files/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../list-files/" class="btn btn-xs btn-link">
+        List Files
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../delete-folder/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../delete-folder/" class="btn btn-xs btn-link">
+        Delete File
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content"><p>&copy; 2023 mrfakename. All rights reserved. This documentation is licensed under the Mozilla Public License, version 2.0.</p>
+  <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
