@@ -2,6 +2,8 @@
 
 # HFHubPHP Alpha
 
+**[Docs](https://fakerybakery.github.io/HFHubPHP/)**
+
 *A portable (in both senses, easily installable and easy to port), fast, and simple wrapper for the Hugging Face Hub APIs, similar to the HF Hub Python library.*
 
 A PHP library for interacting with the Hugging Face Hub. Everything is done in a single file, so all you have to do is drag the file in and import it with `include`!
