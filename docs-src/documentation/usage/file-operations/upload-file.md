@@ -18,7 +18,7 @@ $api->upload_file
   * model
   * dataset
   * space
-* **commit_message**: Commit message. Default: `Delete File`
+* **commit_message**: Commit message.
 * **commit_description**: Extra description for commit message. Defaults to null
 * **revision**: The branch to use. Defaults to `main`.
 

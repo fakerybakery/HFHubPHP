@@ -14,13 +14,13 @@ $api->upload_string
 ## Parameters
 
 * **repo_id**: The ID of the repository on the Hugging Face Hub. Usually in the form of username/repository_name.
+* **path**: Path in repo to save uploaded file to
+* **string**: String to upload
 * **repo_type**: The repo type. Defaults to model. Can be:
   * model
   * dataset
   * space
-* **path**: Path in repo to save uploaded file to
-* **string**: String to upload
-* **commit_message**: Commit message. Default: `Delete File`
+* **commit_message**: Commit message.
 * **commit_description**: Extra description for commit message. Defaults to null
 * **revision**: The branch to use. Defaults to `main`.
 
