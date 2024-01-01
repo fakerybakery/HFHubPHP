@@ -1,4 +1,5 @@
 <?php
+# This software is Copyright (c) 2023 mrfakename. Licensed under the Mozilla Public License, version 2.0. (https://github.com/fakerybakery/HFHubPHP)
 class Hub
 {
     # Protected Variables
