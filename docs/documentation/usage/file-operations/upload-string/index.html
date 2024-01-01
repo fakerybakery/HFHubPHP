@@ -95,15 +95,15 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="parameters">Parameters</h2>
 <ul>
 <li><strong>repo_id</strong>: The ID of the repository on the Hugging Face Hub. Usually in the form of username/repository_name.</li>
+<li><strong>path</strong>: Path in repo to save uploaded file to</li>
+<li><strong>string</strong>: String to upload</li>
 <li><strong>repo_type</strong>: The repo type. Defaults to model. Can be:<ul>
 <li>model</li>
 <li>dataset</li>
 <li>space</li>
 </ul>
 </li>
-<li><strong>path</strong>: Path in repo to save uploaded file to</li>
-<li><strong>string</strong>: String to upload</li>
-<li><strong>commit_message</strong>: Commit message. Default: <code>Delete File</code></li>
+<li><strong>commit_message</strong>: Commit message.</li>
 <li><strong>commit_description</strong>: Extra description for commit message. Defaults to null</li>
 <li><strong>revision</strong>: The branch to use. Defaults to <code>main</code>.</li>
 </ul>
