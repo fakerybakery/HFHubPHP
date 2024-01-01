@@ -47,3 +47,7 @@ The entire library is basically a reimplementation of the [`huggingface_hub` lib
 ## License
 
 This software is licensed under the Mozilla Public License, version 2.0. The Mozilla Public License encourages sharing, however it does not have the same restrictions as the GNU General Public License, as it does *not* require linked software to be licensed under the same license. If you have any questions about the license, please open an Issue on GitHub.
+
+**We offer an exception to this license:** You do not have to include the full text of the license, but instead may use:
+
+> This software is Copyright (c) 2023 mrfakename. Licensed under the Mozilla Public License, version 2.0. (https://github.com/fakerybakery/HFHubPHP)
