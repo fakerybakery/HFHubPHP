@@ -176,14 +176,24 @@ class Hub
     public function upload_string($repo_id, $path, $string, $commit_message, $commit_description = null, $repo_type = 'model', $revision = 'main')
     {
         $this->_validate_type($repo_type);
-        $payload = [
-            json_encode([
+        if ($commit_description) {
+            $x = [
                 "key" => "header",
                 "value" => [
                     "summary" => $commit_message,
                     "description" => $commit_description
                 ]
-            ]),
+            ];
+        } else {
+            $x = [
+                "key" => "header",
+                "value" => [
+                    "summary" => $commit_message,
+                ]
+            ];
+        }
+        $payload = [
+            json_encode($x),
             json_encode([
                 "key" => "file",
                 "value" => [
@@ -196,7 +206,7 @@ class Hub
         $items = implode("\n", $payload);
         $url = $this->base_url . 'api/' . $repo_type . "s/$repo_id/commit/$revision";
         $headers = $this->_create_headers();
-        $headers = array_push($headers, "content-type: application/x-ndjson");
+        array_push($headers, "content-type: application/x-ndjson");
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $items);
@@ -207,6 +217,7 @@ class Hub
         curl_close($ch);
         return json_decode($response, true);
     }
+    
     public function delete_file($repo_id, $path, $repo_type = 'model', $commit_message = "Delete File", $commit_description = null, $revision = 'main')
     {
         $this->_validate_type($repo_type);
